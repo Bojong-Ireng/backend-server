@@ -1,16 +1,23 @@
 # Backend server for Bojongireng's tracking app
----
 This backend server is intended to serve all frontend apps, like mobile app (and web app if present).  
 Using Go v1.24 and PostgreSQL v1.17, and is containerized using docker.
 
 ## Database relational schema
 ![RS Bojongireng](https://github.com/user-attachments/assets/afab6925-1b8c-42eb-8591-b010fbfd3e37)
 
-## Prerequisite
-- Install Docker: https://www.docker.com/products/docker-desktop/  
-You don't need to install Go or PostgreSQL.
+---
+## API Routes  
+Right now there are only one route available for testing purpose:  
+- **/test/postdb:**  
+Use method POST with request body of bus_id, bus_name, and company_name (see relational schema on table buses).  
+If successful, you will get response code of 200 and success message. Data will be stored into database on table buses.
 
+---
 ## How to build and run the server
+### Prerequisite
+- Install Docker: https://www.docker.com/products/docker-desktop/  
+You don't need to install Go or PostgreSQL.  
+
 1. Clone the repository  
 <pre>
 git clone https://github.com/Bojong-Ireng/backend-server.git
