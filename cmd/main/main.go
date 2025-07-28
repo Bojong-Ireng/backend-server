@@ -7,13 +7,12 @@ import (
 
 	"github.com/Bojong-Ireng/backend-server/config"
 	. "github.com/Bojong-Ireng/backend-server/internal/delivery/http"
-	"github.com/joho/godotenv"
-)
-
+  
 func run() error {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("failed to load .env: %s", err)
-	}
+	// Uncomment if not run on docker
+	// if err := godotenv.Load(); err != nil {
+	// 	log.Fatalf("failed to load .env: %s", err)
+	// }
 
 	srv := NewServer()
 	httpServer := &http.Server{

@@ -4,12 +4,12 @@
 services:
   server:
     build:
-      context: .
-      target: final
+      context: ../
+      dockerfile: docker/dev.Dockerfile
     ports:
       - 8080:8080
     env_file:
-      - path: ./.env
+      - path: ../.env
         required: true
     depends_on:
       db:
@@ -31,10 +31,10 @@ services:
       test: [ "CMD", "pg_isready" ]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 3
 volumes:
   db-data:
 secrets:
   db-password:
-    file: docker/db/password.txt
+    file: "./db/password.txt"
 
