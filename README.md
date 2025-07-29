@@ -1,5 +1,5 @@
-# Backend server for Bojongireng's tracking app
-This backend server is intended to serve all frontend apps, like mobile app (and web app if present).  
+# Backend server for PANGUI apps
+This backend server is intended to serve pangui on all platforms, like mobile app (and web app if present).  
 Using Go v1.24 and PostgreSQL v1.17, and is containerized using docker.
 
 ## Database relational schema
@@ -39,7 +39,7 @@ DB_TIMEZONE=
 
 3. Create password.txt for database
 Create a password.txt file inside /docker/db and put your password directly there.  
-Below is an example of using bash + vim.
+Below is an example using bash + vim.
 <pre>
   cd ./docker/db
   touch password.txt
